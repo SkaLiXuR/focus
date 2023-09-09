@@ -5,7 +5,8 @@
 }
 
 ::selection {
-  background-color: #292929;
+  border-radius: 5px;
+  background-color: #ffffff18;
 }
 
 body {
@@ -104,7 +105,7 @@ body {
   height: 5vw;
   transform: translate(30%, 0%);
   animation: slide-right 1s cubic-bezier(0.39, 0.575, 0.565, 1) 1.5s 1 both,
-    fade-in 1s linear 1.6s 1 both;
+    fade-in 1s linear 1.7s 1 both;
 }
 
 .quote-image-reversed {
@@ -121,6 +122,8 @@ body {
 }
 
 .quote {
+  pointer-events: all;
+  user-select: all;
   animation: fade-in 1s linear 0.5s 1 both;
 }
 
