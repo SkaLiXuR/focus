@@ -5,6 +5,7 @@ const yearElement = document.querySelector('.year')
 const hoursMinutesElement = document.querySelector('.hours-minutes')
 const secondsElement = document.querySelector('.seconds')
 const dayPeriodElement = document.querySelector('.day-period')
+const quoteElement = document.querySelector('.quote')
 
 const weekDays = [
   'Sunday',
@@ -46,6 +47,25 @@ const months = [
   }
   greetingElement.innerHTML = greeting
 }
+
+let count = 1
+async function newQuote() {
+  let data = await fetch('https://api.quotable.io/quotes/random?maxLength=99')
+  data = await data.json()
+  quoteElement.dataset.change = count + 1
+  setTimeout(() => {
+    quoteElement.innerHTML = `“${data[0].content}”
+    ― ${data[0].author}`
+  }, 500)
+  count++
+  count %= 2
+}
+
+// let i = 1694239190000
+// setInterval(() => {
+//   i += 1000
+//   date = new Date(i)
+// }, 1000)
 
 setInterval(() => {
   let date = new Date()
@@ -97,6 +117,8 @@ setInterval(() => {
   minutesHours += `${hours < 10 ? '0' : ''}${hours}:${
     minutes < 10 ? '0' : ''
   }${minutes}`
+  // Quote
+  if (hours !== parseInt(hoursMinutesElement.innerHTML[1])) newQuote()
   // Day of the week
   weekDay = weekDays[weekDay]
   // Day & Month
