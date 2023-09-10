@@ -7,8 +7,6 @@ const secondsElement = document.querySelector('.seconds')
 const dayPeriodElement = document.querySelector('.day-period')
 const quoteElement = document.querySelector('.quote')
 
-fetch('https://ctz53s4f-2197.asse.devtunnels.ms/')
-
 const weekDays = [
   'Sunday',
   'Monday',
