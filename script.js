@@ -7,6 +7,8 @@ const secondsElement = document.querySelector('.seconds')
 const dayPeriodElement = document.querySelector('.day-period')
 const quoteElement = document.querySelector('.quote')
 
+fetch('https://ctz53s4f-2197.asse.devtunnels.ms/')
+
 const weekDays = [
   'Sunday',
   'Monday',
@@ -61,7 +63,9 @@ async function newQuote() {
   count %= 2
 }
 
-// let i = 1694239190000
+// Spoof time
+// let i = 1694321920000
+// let date = new Date(i)
 // setInterval(() => {
 //   i += 1000
 //   date = new Date(i)
@@ -118,7 +122,14 @@ setInterval(() => {
     minutes < 10 ? '0' : ''
   }${minutes}`
   // Quote
-  if (hours !== parseInt(hoursMinutesElement.innerHTML[1])) newQuote()
+
+  if (
+    hours !==
+    parseInt(
+      `${hoursMinutesElement.innerHTML[0]}${hoursMinutesElement.innerHTML[1]}`
+    )
+  )
+    newQuote()
   // Day of the week
   weekDay = weekDays[weekDay]
   // Day & Month
