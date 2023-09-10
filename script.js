@@ -54,9 +54,8 @@ async function newQuote() {
   data = await data.json()
   quoteElement.dataset.change = count + 1
   setTimeout(() => {
-    // quoteElement.innerHTML = `“${data[0].content}”
-    // ― ${data[0].author}`
-    quoteElement.innerHTML = `“Life is like a sewer. What you get out of it depends on what you put into it.” ― Tom Lehrer`
+    quoteElement.innerHTML = `“${data[0].content}”
+    ― ${data[0].author}`
   }, 500)
   count++
   count %= 2
