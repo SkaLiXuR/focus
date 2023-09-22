@@ -62,12 +62,12 @@ async function newQuote() {
 }
 
 // Spoof time
-// let i = 1694321920000
+// let i = 1694321990000
 // let date = new Date(i)
 // setInterval(() => {
 //   i += 1000
 //   date = new Date(i)
-// }, 1000)
+// }, 500)
 
 setInterval(() => {
   let date = new Date()

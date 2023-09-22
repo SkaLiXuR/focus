@@ -123,11 +123,11 @@ body {
 }
 
 .quote[data-change='1'] {
-  animation: fade-in 1s linear 2s 1 both, fade-out-fade-in-1 1s linear 0s 1 both;
+  animation: fade-in 1s linear 2s 1 both, fade-out-fade-in-1 2s linear 0s 1 both;
 }
 
 .quote[data-change='2'] {
-  animation: fade-in 1s linear 2s 1 both, fade-out-fade-in-2 1s linear 0s 1 both;
+  animation: fade-in 1s linear 2s 1 both, fade-out-fade-in-2 2s linear 0s 1 both;
 }
 
 @keyframes slide-right {
@@ -161,7 +161,7 @@ body {
   0% {
     opacity: 1;
   }
-  50% {
+  25% {
     opacity: 0;
   }
   100% {
@@ -173,7 +173,7 @@ body {
   0% {
     opacity: 1;
   }
-  50% {
+  25% {
     opacity: 0;
   }
   100% {
@@ -185,7 +185,7 @@ body {
   0% {
     opacity: 1;
   }
-  50% {
+  25% {
     opacity: 0;
   }
   100% {
