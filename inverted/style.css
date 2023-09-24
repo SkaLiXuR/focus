@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+* {
+  font-family: 'Inter', sans-serif;
+  color: black;
+}
+
+::selection {
+  border-radius: 5px;
+  background-color: #00000018;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.greeting {
+  white-space: nowrap;
+  font-size: 13vw;
+  animation: fade-in-scale-down-slide-up 2.5s ease 0s 1 both;
+}
+
+.greeting[data-change='1'] {
+  animation: fade-in-scale-down-slide-up 2.5s ease 0s 1 both,
+    fade-out-fade-in-1 1s linear 0s 1 both;
+}
+
+.greeting[data-change='2'] {
+  animation: fade-in-scale-down-slide-up 2.5s ease 0s 1 both,
+    fade-out-fade-in-2 1s linear 0s 1 both;
+}
+
+.greeting[data-change='3'] {
+  animation: fade-in-scale-down-slide-up 2.5s ease 0s 1 both,
+    fade-out-fade-in-3 1s linear 0s 1 both;
+}
+
+.center {
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.focus {
+  font-size: 28vw;
+  color: #dcdcdc;
+  z-index: -999;
+  top: 50%;
+
+  animation: fade-in 0.5s linear 2.5s 1 both;
+}
+
+.time {
+  animation: fade-in 1s linear 2s 1 both;
+}
+
+.date {
+  transform: translateY(1.5em);
+  font-size: 2.5vw;
+}
+
+.hours-minutes {
+  padding: 0;
+  margin: 0;
+  font-size: 20vw;
+}
+
+.seconds {
+  text-align: start;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 2.36em;
+  right: 0px;
+  width: 5vw;
+  font-size: 3vw;
+}
+
+.day-period {
+  font-size: 3vw;
+}
+
+.quote-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5vw;
+  top: unset;
+  bottom: 5.5vw;
+  width: clamp(0, 50vw);
+  height: 1lh;
+  text-overflow: ellipsis;
+}
+
+.quote-image {
+  z-index: -1;
+  height: 5vw;
+  transform: translate(30%, 0%);
+  animation: slide-right 1s cubic-bezier(0.39, 0.575, 0.565, 1) 1.5s 1 both,
+    fade-in 1s linear 1.8s 1 both;
+}
+
+.quote-image-reversed {
+  z-index: -1;
+  height: 5vw;
+  transform: translate(30%, 0%);
+  animation: slide-left 1s cubic-bezier(0.39, 0.575, 0.565, 1) 1.5s 1 both,
+    fade-in 1s linear 1.8s 1 both;
+}
+
+.quote {
+  pointer-events: all;
+  user-select: all;
+  animation: fade-in 1s linear 2s 1 both;
+}
+
+.quote[data-change='1'] {
+  animation: fade-in 1s linear 2s 1 both, fade-out-fade-in-1 2s linear 0s 1 both;
+}
+
+.quote[data-change='2'] {
+  animation: fade-in 1s linear 2s 1 both, fade-out-fade-in-2 2s linear 0s 1 both;
+}
+
+@keyframes slide-right {
+  from {
+    transform: translate(300%, 0%);
+  }
+  to {
+    transform: translate(30%, 0%);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    transform: translate(-300%, 0%);
+  }
+  to {
+    transform: translate(-30%, 0%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out-fade-in-1 {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out-fade-in-2 {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out-fade-in-3 {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in-scale-down-slide-up {
+  0% {
+    opacity: 0;
+    font-size: 10vw;
+    top: 50%;
+  }
+  35% {
+    opacity: 1;
+    font-size: 10.5vw;
+    top: 50%;
+  }
+  55% {
+    opacity: 1;
+    font-size: 2vw;
+    top: 50%;
+  }
+  85% {
+    opacity: 1;
+    font-size: 2vw;
+    top: 7.5vw;
+  }
+  100% {
+    opacity: 1;
+    font-size: 2vw;
+    top: 7.5vw;
+  }
+}
