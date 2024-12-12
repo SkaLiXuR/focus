@@ -50,17 +50,21 @@ const months = [
 
 let count = 1
 async function newQuote() {
-  /* let data = await fetch('https://api.quotable.io/quotes/random?maxLength=99')
-  data = await data.json()  */
+  const res = await fetch(
+    `https://quoteslate.vercel.app/api/quotes/random?maxLength=99`
+  )
+  const quoteData = await res.json()
+  const { quote, author } = quoteData
+
   quoteElement.dataset.change = count + 1
-  /* setTimeout(() => {
-    quoteElement.innerHTML = `“${data[0].content}”
-    ― ${data[0].author}`
-  }, 500) */
   setTimeout(() => {
-    quoteElement.innerHTML = `“Action is the foundational key to all success.”
-    ― Pablo Picasso`
+    quoteElement.innerHTML = `“${quote}”
+    ― ${author}`
   }, 500)
+  // setTimeout(() => {
+  //   quoteElement.innerHTML = `“Action is the foundational key to all success.”
+  //   ― Pablo Picasso`
+  // }, 500)
   count++
   count %= 2
 }
